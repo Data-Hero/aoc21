@@ -27,7 +27,22 @@ func main() {
 	}
 
 	task(lines)
+	task2(lines)
 
+}
+
+func task2(lines []string) {
+	var sums []string
+	for i, line := range lines {
+		if i < len(lines)-2 {
+			a, _ := strconv.Atoi(line)
+			b, _ := strconv.Atoi(lines[i+1])
+			c, _ := strconv.Atoi(lines[i+2])
+			sum := a + b + c
+			sums = append(sums, strconv.Itoa(sum))
+		}
+	}
+	task(sums)
 }
 
 func task(lines []string) {
